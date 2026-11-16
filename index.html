@@ -37,7 +37,7 @@
     /* Header */
     header { display: flex; gap: 28px; align-items: center; margin-bottom: 40px; }
     header img {
-      width: 132px; height: 132px; object-fit: cover;
+      width: 190px; height: 190px; object-fit: cover;
       border-radius: 50%; flex-shrink: 0;
     }
     h1 { font-size: 2.1rem; font-weight: 600; margin: 0 0 4px; line-height: 1.2; }
@@ -62,15 +62,15 @@
     details { margin-top: 4px; font-size: 0.95rem; }
     summary { cursor: pointer; color: var(--link); display: inline; list-style: none; }
     summary::-webkit-details-marker { display: none; }
-    summary::before { content: "[+] "; }
-    details[open] summary::before { content: "[−] "; }
+    summary .abs::before { content: "[+] "; }
+    details[open] summary .abs::before { content: "[−] "; }
     details p { margin-top: 8px; color: #333; }
-    .pdf { font-size: 0.95rem; margin-left: 10px; }
+    .pdf { font-size: 0.95rem; margin-left: 16px; }
 
     /* Simple lists */
     ul.plain { list-style: none; padding: 0; margin: 0; }
-    ul.plain li { margin-bottom: 8px; }
-    .yr { color: var(--muted); display: inline-block; min-width: 92px; }
+    ul.plain li { margin-bottom: 10px; display: grid; grid-template-columns: 92px 1fr; column-gap: 12px; }
+    .yr { color: var(--muted); }
 
     footer { margin-top: 64px; color: var(--muted); font-size: 0.85rem; }
 
@@ -78,8 +78,8 @@
       body { font-size: 17px; }
       main { padding: 40px 20px 72px; }
       header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      header img { width: 104px; height: 104px; }
-      .yr { display: block; min-width: 0; }
+      header img { width: 150px; height: 150px; }
+      ul.plain li { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -93,7 +93,7 @@
       <h1>Yoonseung Seon</h1>
       <p class="role">M.A. Student in Economics, Yonsei University</p>
       <p class="links">
-        <a href="cv_yoonseung_seon.pdf">CV</a>
+        <a href="cv.pdf">CV</a>
         <a href="mailto:ellie3257@yonsei.ac.kr">Email</a>
         <!-- <a href="https://scholar.google.com/">Google Scholar</a> -->
         <!-- <a href="https://github.com/">GitHub</a> -->
@@ -107,9 +107,7 @@
       I am an M.A. student at the School of Economics, Yonsei University.
       My research is in applied microeconomics, with a focus on
       <strong>industrial organization</strong>, <strong>international trade</strong>,
-      and <strong>environmental economics</strong>. I study how trade shocks
-      spill over into domestic markets, most recently in used-car markets and in
-      local air quality.
+      and <strong>environmental economics</strong>.
     </p>
     <p>
       I am applying to Ph.D. programs in Economics for Fall 2027.
@@ -120,10 +118,10 @@
     <h2>Working Papers</h2>
 
     <div class="paper">
-      <div class="paper-title">The Impact of Used-Car Exports on Domestic Used-Car Markets</div>
-      <div class="coauthors">with Seung Hoon Lee, Seung-Hyun Hong, and Jay Pil Choi</div>
+      <div class="paper-title">The Impact of Export Demand Shocks on Domestic Used Car Markets: Evidence from South Korea</div>
+      <div class="coauthors">with Jay Pil Choi, Seung-Hyun Hong, and Seung Hoon Lee</div>
       <details>
-        <summary>Abstract</summary>
+        <summary><span class="abs">Abstract</span><a class="pdf" href="#">[PDF]</a></summary>
         <p>
           After the Russia–Ukraine war, Korean used-car exports to Russia surged
           as used cars became substitutes for new cars, whose supply in Russia had collapsed.
@@ -132,14 +130,19 @@
           and we develop a model with dealer capacity constraints to explain the price and volume patterns.
         </p>
       </details>
-      <a class="pdf" href="#">[PDF]</a>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">How Intermediated Markets Adjust to Demand Shocks: Evidence from Used Cars</div>
+      <div class="coauthors">with Jay Pil Choi, Seung-Hyun Hong, and Seung Hoon Lee</div>
+      <a class="pdf" href="#" style="margin-left:0">[PDF]</a>
     </div>
 
     <div class="paper">
       <div class="paper-title">Air Pollution and Health Burdens across Borders: Evidence from South Korea after China's Plastic Waste Import Ban</div>
       <div class="coauthors">with Jaerim Choi</div>
       <details>
-        <summary>Abstract</summary>
+        <summary><span class="abs">Abstract</span><a class="pdf" href="#">[PDF]</a></summary>
         <p>
           China's 2018 plastic waste import ban redirected waste flows toward South Korea.
           Using a continuous difference-in-differences design with a shift-share instrument,
@@ -147,58 +150,38 @@
           local PM2.5 by 2.0–2.6% and monthly health claims by 1.6%.
         </p>
       </details>
-      <a class="pdf" href="#">[PDF]</a>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">Boycotts in Secondary Markets: Channel-Level Evidence from Korean Used Cars</div>
-      <div class="coauthors">with Seung Hoon Lee, Seung-Hyun Hong, and Jay Pil Choi</div>
-      <details>
-        <summary>Abstract</summary>
-        <p>
-          We study how a consumer boycott spreads from new-car markets to secondary markets,
-          using channel-level transaction data on Korean used cars to separate dealer and
-          private-to-private trades.
-        </p>
-      </details>
-      <a class="pdf" href="#">[PDF]</a>
     </div>
   </section>
 
-  <section id="policy">
-    <h2>Policy Research</h2>
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="paper">
+      <div class="paper-title">Trade Shocks and Regional Spillovers: Evidence from South Korea</div>
+      <div class="coauthors">with Dongik Kang, Myungkyu Kim, and Seung Hoon Lee</div>
+      <div class="meta"><em>Panel for Korean Economic Analysis</em>, forthcoming. Commissioned by the Bank of Korea.</div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Research Experience</h2>
     <ul class="plain">
-      <li><span class="yr">2026</span>Korea Fair Trade Commission — automobile and personal mobility industries: market analysis and policy recommendations (ongoing)</li>
-      <li><span class="yr">2025</span>Bank of Korea — U.S. trade-policy shifts and the Busan regional economy</li>
+      <li><span class="yr">2026–</span><span>Market Analysis and Policy Recommendations for the Automobile Rental and Personal Mobility Industries<br><span class="meta">Korea Fair Trade Commission</span></span></li>
+      <li><span class="yr">2026</span><span>Search Rankings and Self-Preferencing on Online Platforms<br><span class="meta">Korea Fair Trade Commission</span></span></li>
     </ul>
   </section>
 
   <section id="presentations">
     <h2>Presentations</h2>
     <ul class="plain">
-      <li><span class="yr">2026</span>Midwest International Trade &amp; Theory Conference (Toronto, scheduled); Korean Econometric Society Summer Conference (KAIST); KIEA Summer Conference (Gangneung); Asia Pacific Trade Seminars (Hong Kong); KER International Conference (Jeju)</li>
-      <li><span class="yr">2025</span>WEAI 100th Annual Conference (San Francisco); KASIO Summer Conference (SNU)</li>
+      <li><span class="yr">Jan 2027</span><span><a href="https://freit.org/KETC/ketc.html">Korean Empirical Trade Conference</a>, Yonsei University, Korea (forthcoming)</span></li>
+      <li><span class="yr">Oct 2026</span>Midwest International Trade &amp; Theory Conference, Toronto, Canada</li>
+      <li><span class="yr">Aug 2026</span>Korean Econometric Society Conference, KAIST, Korea</li>
+      <li><span class="yr">Aug 2026</span>Korea International Economic Association Conference, Gangneung, Korea</li>
+      <li><span class="yr">Jul 2026</span>Asia Pacific Trade Seminars (APTS), HKUST, Hong Kong</li>
+      <li><span class="yr">Jun 2026</span>Korean Economic Review International Conference, Jeju, Korea</li>
+      <li><span class="yr">Jul 2025</span>Korea Academic Society of Industrial Organization Conference, SNU, Korea</li>
+      <li><span class="yr">Jun 2025</span>Western Economic Association International (WEAI) Conference, San Francisco, USA</li>
     </ul>
-  </section>
-
-  <section id="teaching">
-    <h2>Teaching</h2>
-    <p class="meta" style="margin-bottom:10px;">Teaching Assistant, Yonsei University</p>
-    <ul class="plain">
-      <li>Market and Regulation (2026)</li>
-      <li>R Programming (2026)</li>
-      <li>Urban and Real Estate Theory (2025–2026)</li>
-      <li>Urban and Real Estate Data Analysis, graduate (2024)</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      School of Economics, Yonsei University<br>
-      601 Daewoo Hall, 50 Yonsei-ro, Seodaemun-gu, Seoul, Korea<br>
-      <a href="mailto:ellie3257@yonsei.ac.kr">ellie3257@yonsei.ac.kr</a>
-    </p>
   </section>
 
   <footer>Last updated: November 2026</footer>
