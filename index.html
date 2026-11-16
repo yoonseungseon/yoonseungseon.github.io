@@ -29,13 +29,20 @@
     main {
       max-width: 720px;
       margin: 0 auto;
-      padding: 64px 24px 96px;
+      padding: 0 24px 96px;
     }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     /* Header */
-    header { display: flex; gap: 28px; align-items: center; margin-bottom: 40px; }
+    .top {
+      position: sticky; top: 0; z-index: 10; background: var(--bg);
+      padding: 40px 0 24px; border-bottom: 1px solid var(--rule);
+    }
+    header { display: flex; gap: 32px; align-items: center; }
+    #about { margin-top: 14px; }
+    #about p { margin: 0 0 8px; }
+    section#research { margin-top: 36px; }
     header img {
       width: 240px; height: 240px; object-fit: cover;
       border-radius: 50%; flex-shrink: 0;
@@ -54,7 +61,6 @@
       border-bottom: 1px solid var(--rule);
     }
     p { margin: 0 0 14px; }
-    #about p { font-size: 0.9rem; }
 
     /* Papers */
     .paper { margin-bottom: 26px; }
@@ -75,9 +81,13 @@
 
     footer { margin-top: 64px; color: var(--muted); font-size: 0.85rem; }
 
+    @media (max-width: 560px), (max-height: 640px) {
+      .top { position: static; border-bottom: 0; padding-bottom: 0; }
+    }
     @media (max-width: 560px) {
       body { font-size: 17px; }
-      main { padding: 40px 20px 72px; }
+      main { padding: 0 20px 72px; }
+      .top { padding-top: 40px; }
       header { flex-direction: column; align-items: flex-start; gap: 16px; }
       header img { width: 200px; height: 200px; }
       ul.plain li { grid-template-columns: 1fr; }
@@ -87,6 +97,7 @@
 <body>
 <main>
 
+  <div class="top">
   <header>
     <!-- Put your photo in the repo as photo.jpg. Delete this line if you don't want a photo. -->
     <img src="photo.jpg" alt="Yoonseung Seon" onerror="this.style.display='none'">
@@ -99,21 +110,21 @@
         <!-- <a href="https://scholar.google.com/">Google Scholar</a> -->
         <!-- <a href="https://github.com/">GitHub</a> -->
       </p>
+      <div id="about">
+        <p>
+          I am an M.A. student at the School of Economics, Yonsei University.
+          My research is in applied microeconomics, with a focus on
+          <strong>industrial organization</strong>, <strong>international trade</strong>,
+          and <strong>environmental economics</strong>.
+        </p>
+        <p>
+          I am applying to Ph.D. programs in Economics for Fall 2027.
+        </p>
+      </div>
     </div>
   </header>
+  </div>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am an M.A. student at the School of Economics, Yonsei University.
-      My research is in applied microeconomics, with a focus on
-      <strong>industrial organization</strong>, <strong>international trade</strong>,
-      and <strong>environmental economics</strong>.
-    </p>
-    <p>
-      I am applying to Ph.D. programs in Economics for Fall 2027.
-    </p>
-  </section>
 
   <section id="research">
     <h2>Working Papers</h2>
